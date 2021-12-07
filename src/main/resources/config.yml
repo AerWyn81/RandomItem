@@ -1,0 +1,10 @@
+assetFile: "assets-1.18.json"
+
+blockBlacklist:
+  - "REPEATING_COMMAND_BLOCK"
+  - "CHAIN_COMMAND_BLOCK"
+  - "COMMAND_BLOCK"
+  - "LIGHT"
+  - "STRUCTURE_VOID"
+  - "STRUCTURE_BLOCK"
+  - "JIGSAW"

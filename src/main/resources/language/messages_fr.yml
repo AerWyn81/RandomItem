@@ -1,0 +1,10 @@
+Prefix: "&bRandomItem &7»&r"
+
+Messages:
+  MissingPermission: "%prefix% &cVous n'avez pas la permission d'éxécuter cette commande"
+  ReloadSuccess: "%prefix% &aLa configuration a été rechargée avec succès"
+  PlayerNotFound: "%prefix% &cLe joueur &e%player% &cn'a pas été trouvé"
+  SenderItemReward: "%prefix% &aLe joueur &e%player% &avient de recevoir l'objet &e%item%"
+  PlayerItemRewardFull: "%prefix% &aL'objet &e%item% &aest tombé au sol car votre inventaire était complet"
+  PlayerItemReward: "%prefix% &aVous venez de recevoir l'objet &e%item%"
+  ShowVersion: "%prefix% &aVersion du plugin : &e%version%"
