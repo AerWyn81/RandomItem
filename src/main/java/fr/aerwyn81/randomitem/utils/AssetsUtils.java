@@ -1,7 +1,6 @@
 package fr.aerwyn81.randomitem.utils;
 
 import com.google.gson.GsonBuilder;
-import fr.aerwyn81.randomitem.RandomItem;
 import org.apache.commons.lang.WordUtils;
 import org.bukkit.Material;
 
@@ -10,7 +9,7 @@ import java.io.FileReader;
 import java.util.HashMap;
 import java.util.Map;
 
-public record AssetsHelper(RandomItem main) {
+public class AssetsUtils {
     private static final Map<Material, String> cachedMaterials = new HashMap<>();
 
     public static void load(File assetFile) {

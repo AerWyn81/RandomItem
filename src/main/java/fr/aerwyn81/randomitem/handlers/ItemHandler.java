@@ -1,7 +1,7 @@
 package fr.aerwyn81.randomitem.handlers;
 
 import fr.aerwyn81.randomitem.RandomItem;
-import fr.aerwyn81.randomitem.utils.AssetsHelper;
+import fr.aerwyn81.randomitem.utils.AssetsUtils;
 import fr.aerwyn81.randomitem.utils.MaterialUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -12,7 +12,7 @@ public record ItemHandler(RandomItem main) {
         String message;
         ItemStack item = MaterialUtils.getRandomItemStack(main.getConfigHandler().getMaterialsAvailable());
 
-        String itemName = AssetsHelper.getMaterialName(item.getType());
+        String itemName = AssetsUtils.getMaterialName(item.getType());
 
         if (player.getInventory().firstEmpty() == -1) {
             player.getWorld().dropItem(player.getLocation().clone().add(.0f, .1f, .0f), item);

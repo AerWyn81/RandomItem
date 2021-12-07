@@ -5,7 +5,7 @@ import fr.aerwyn81.randomitem.commands.RITabCompleter;
 import fr.aerwyn81.randomitem.handlers.ConfigHandler;
 import fr.aerwyn81.randomitem.handlers.ItemHandler;
 import fr.aerwyn81.randomitem.handlers.LanguageHandler;
-import fr.aerwyn81.randomitem.utils.AssetsHelper;
+import fr.aerwyn81.randomitem.utils.AssetsUtils;
 import fr.aerwyn81.randomitem.utils.ConfigUpdater;
 import fr.aerwyn81.randomitem.utils.FormatUtils;
 import org.bukkit.Bukkit;
@@ -49,7 +49,7 @@ public final class RandomItem extends JavaPlugin {
 
         this.itemHandler = new ItemHandler(this);
 
-        AssetsHelper.load(new File(getDataFolder(), configHandler.getAssetFile()));
+        AssetsUtils.load(new File(getDataFolder(), configHandler.getAssetFile()));
 
         registerCommands();
 

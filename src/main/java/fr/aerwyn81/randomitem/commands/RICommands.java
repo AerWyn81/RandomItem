@@ -1,7 +1,7 @@
 package fr.aerwyn81.randomitem.commands;
 
 import fr.aerwyn81.randomitem.RandomItem;
-import fr.aerwyn81.randomitem.utils.AssetsHelper;
+import fr.aerwyn81.randomitem.utils.AssetsUtils;
 import fr.aerwyn81.randomitem.utils.FormatUtils;
 import fr.aerwyn81.randomitem.utils.PlayerUtils;
 import org.bukkit.Bukkit;
@@ -75,7 +75,7 @@ public record RICommands(RandomItem main) implements CommandExecutor {
             ItemStack item = main.getItemHandler().giveRandomItem(player);
             sender.sendMessage(main.getLanguageHandler().getMessage("Messages.SenderItemReward")
                     .replaceAll("%player%", player.getName())
-                    .replaceAll("%item%",  AssetsHelper.getMaterialName(item.getType())));
+                    .replaceAll("%item%", AssetsUtils.getMaterialName(item.getType())));
         }
     }
 
@@ -86,7 +86,7 @@ public record RICommands(RandomItem main) implements CommandExecutor {
         main.getLanguageHandler().setLanguage("fr");
         main.getLanguageHandler().pushMessages();
 
-        AssetsHelper.load(new File(main.getDataFolder(), main.getConfigHandler().getAssetFile()));
+        AssetsUtils.load(new File(main.getDataFolder(), main.getConfigHandler().getAssetFile()));
 
         sender.sendMessage(main.getLanguageHandler().getMessage("Messages.ReloadSuccess"));
     }
