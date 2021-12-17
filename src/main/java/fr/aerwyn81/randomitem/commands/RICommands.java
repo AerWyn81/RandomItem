@@ -56,7 +56,7 @@ public record RICommands(RandomItem main) implements CommandExecutor {
     }
 
     private void giveCommand(CommandSender sender, String[] args) {
-        if (args.length > 3) {
+        if (args.length > 3 || args.length < 2) {
             helpCommand(sender);
             return;
         }
