@@ -9,7 +9,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
 
 import java.io.File;
 
@@ -72,10 +71,10 @@ public record RICommands(RandomItem main) implements CommandExecutor {
         int nbItems = args.length == 2 ? 1 : FormatUtils.parseWithDefault(args[2], 1);
 
         for (int i = 0; i < nbItems; i++) {
-            ItemStack item = main.getItemHandler().giveRandomItem(player);
+            String itemName = main.getItemHandler().giveRandomItem(player);
             sender.sendMessage(main.getLanguageHandler().getMessage("Messages.SenderItemReward")
                     .replaceAll("%player%", player.getName())
-                    .replaceAll("%item%", AssetsUtils.getMaterialName(item.getType())));
+                    .replaceAll("%item%", itemName));
         }
     }
 

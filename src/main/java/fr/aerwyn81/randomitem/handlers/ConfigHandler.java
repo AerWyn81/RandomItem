@@ -53,8 +53,8 @@ public class ConfigHandler {
         materials.addAll(Arrays.stream(Material.values()).filter(m -> !blockBlacklist.contains(m)).collect(Collectors.toSet()));
     }
 
-    public List<Material> getMaterialsAvailable() {
-        return materials.stream().filter(m -> !m.isAir() && m.isBlock() && m.isItem()).collect(Collectors.toList());
+    public ArrayList<Material> getMaterialsAvailable() {
+        return materials.stream().filter(m -> !m.isAir() && m.isBlock() && m.isItem()).collect(Collectors.toCollection(ArrayList::new));
     }
 
     public String getAssetFile() {
